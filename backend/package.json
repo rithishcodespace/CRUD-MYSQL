@@ -1,0 +1,26 @@
+{
+  "name": "mysql-crud-operations",
+  "version": "1.0.0",
+  "description": "This is to understand crud operations in mysql",
+  "main": "index.js",
+  "scripts": {
+    "test": "none",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rithishcodespace/mysql-crud-operations.git"
+  },
+  "author": "Rithish_Saravanan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rithishcodespace/mysql-crud-operations/issues"
+  },
+  "homepage": "https://github.com/rithishcodespace/mysql-crud-operations#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.9"
+  }
+}
