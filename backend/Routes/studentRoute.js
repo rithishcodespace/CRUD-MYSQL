@@ -50,7 +50,11 @@ studentRoute.delete("/deleteData/:id",(req,res)=>{
 studentRoute.patch("/patchData/:id",(req,res)=>{
    try{
       let id = [req.params.id];
-      let sql = "alter table student "
+      let sql = `update student set name = ?, emailId = ?, password = ? where student_id = ${id}`;
+      db.query(sql,[req.body.name,req.body.emailId,req.body.password],(error,result)=>{
+         if(error) res.status(404).send(error);
+         else res.send("student information updated successfully");
+      })
    }
    catch(error)
    {

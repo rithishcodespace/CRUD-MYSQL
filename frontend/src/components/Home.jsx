@@ -1,8 +1,10 @@
 import { useEffect,useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useLocation,useNavigate } from "react-router-dom";
 
 let Home = () =>{
     const [studentData,setStudentData] = useState([]);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     function handleDelete(id)
     {
@@ -32,6 +34,17 @@ let Home = () =>{
         getdata();
     },[]
     );
+
+    useEffect(()=>{
+       async function getdata()
+        {
+          let data = await fetch("http://localhost:3000/getData");
+          let json = await data.json();
+          setStudentData(json);
+        }
+        getdata(); 
+    },[location])
+
     return(
         <div className="bg-gradient-to-r from-purple-600 to-green-400 h-screen">
             <center>
